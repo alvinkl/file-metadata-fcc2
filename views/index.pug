@@ -2,6 +2,6 @@ extends layout
 
 block content
   p Submit a file to view its filesize.
-  form(method='get', action='/get-file-size', enctype='multipart/form-data')
+  form(method='POST', action='/get-file-size', enctype='multipart/form-data')
     input(type='file', value='Choose File', name='file')
     button(type='submit') Submit

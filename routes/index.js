@@ -9,8 +9,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/get-file-size', upload.single('file') ,(req, res, next) => {
-  res.send(req.file);
+router.post('/get-file-size', upload.single('file'), (req, res, next) => {
+  res.send({
+    size: req.file.size
+  });
 });
 
 module.exports = router;
